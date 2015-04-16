@@ -21,7 +21,8 @@ config.module = {
 		{ test: require.resolve('jquery'), loaders: ['expose?jQuery', 'expose?$'] },
 		{ test: /\.scss$/, loader: "style!css!sass" },
 		{ test: /\.css$/, loader: "style!css" },
-		{ test: require.resolve('zurb-foundation'), loader: 'expose?foundation' }  
+		{ test: require.resolve('zurb-foundation'), loader: 'expose?foundation' },
+		{ test: require.resolve('./node_modules/zurb-foundation/js/foundation/foundation.offcanvas.js'), loader: 'expose?foundationOffcanvas' } 
 	]
 };
 
