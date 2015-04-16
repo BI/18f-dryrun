@@ -6,9 +6,12 @@ var foundationOffcanvas = require('../../../node_modules/zurb-foundation/js/foun
 
 require('../stylesheets/18f.scss');
 
+/*
+//dont need
 document.addEventListener('DOMContentLoaded', function() {
 	React.render(
 		<App who={"World"} />,
 		document.getElementById("app-entry-point")
 	);
 });
+*/

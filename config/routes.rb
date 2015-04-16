@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get 'proposals/submission_fiscal_year/:year', to: 'proposals#submission_fiscal_year'
 
   # You can have the root of your site routed with "root"
-  root 'demo#index'
+  root 'proposals#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
