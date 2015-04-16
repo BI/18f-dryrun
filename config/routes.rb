@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'proposals/submission_fiscal_year/:year', to: 'proposals#submission_fiscal_year'
 
   # You can have the root of your site routed with "root"
-  root 'proposals#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
