@@ -7,10 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="off-canvas-fullscreen dynamic-fullscreen">
+	<a href="#skip_menu" class="skip-link allow-focus">Skip to main content</a>
 	<div class="off-canvas-wrap" data-offcanvas>
 	<div class="inner-wrap">
+		<!-- off-canvas menu -->
+		<nav id="right-menu" class="right-off-canvas-menu">
+			<div class="off-canvas-menu-container">
+				<h2 class="nifa-logo clearfix"><img src="/assets/logo.png"/><span>United States Department of Agriculture<span>National Institute of Food and Agriculture</span></span></h2>
+				<ul>
+					<li><a href="javascript:void(0);">Menu Link</a></li>
+					<li><a href="javascript:void(0);">Menu Link</a></li>
+					<li><a href="javascript:void(0);">Menu Link</a></li>
+					<li><a href="javascript:void(0);">Menu Link</a></li>
+				</ul>
+			</div>
+		</nav>
+
+
 		<!-- main content goes here -->
 		<div class="canvas-content">
+			<a id="skip_menu" name="skip_content" tab-index="-1"></a>
 			<div class="row row-title">
 				<div class="small-12 columns">
 					<h1>Page Title</h1>
@@ -28,19 +44,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- off-canvas menu -->
-		<nav id="right-menu" class="right-off-canvas-menu">
-			<div class="off-canvas-menu-container">
-				<h2 class="nifa-logo clearfix"><img src="/assets/logo.png"/><span>United States Department of Agriculture<span>National Institute of Food and Agriculture</span></span></h2>
-				<ul>
-					<li><a href="javascript:void(0);">Menu Link</a></li>
-					<li><a href="javascript:void(0);">Menu Link</a></li>
-					<li><a href="javascript:void(0);">Menu Link</a></li>
-					<li><a href="javascript:void(0);">Menu Link</a></li>
-				</ul>
-			</div>
-		</nav>
 
 		<!-- close the off-canvas menu -->
 		<a class="exit-off-canvas"></a>
