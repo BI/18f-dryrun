@@ -1,0 +1,13 @@
+// Place all the styles related to the 18f controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // for referencing Bootstrap CDN font files directly
+
+@import "settings",
+        "../../../node_modules/zurb-foundation/scss/foundation/components/grid",
+        "../../../node_modules/zurb-foundation/scss/foundation/components/visibility",
+        "../../../node_modules/font-awesome/scss/font-awesome";
+
+
+.foundation-example .columns {box-shadow: 0 0 1px 0 rgba(0,0,0,.4) inset;}
