@@ -40,6 +40,11 @@ var config = module.exports = {
 				'webpack-dev-server/client?http://localhost:8030', //webpack dev server
 				'webpack/hot/only-dev-server',
 				'./recipient_treemap.js' //app entry point from context
+			],
+			home: [
+				'webpack-dev-server/client?http://localhost:8030', //webpack dev server
+				'webpack/hot/only-dev-server',
+				'./home.js' //app entry point from context
 			]
 	}
 };
