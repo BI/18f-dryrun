@@ -15,4 +15,4 @@
 //Note require tree is the tree of files located in the assets
 //= require jquery
 //= require jquery_ujs
-//= require webpack-bundle
+//= require demo-bundle

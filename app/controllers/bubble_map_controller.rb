@@ -1,0 +1,2 @@
+class BubbleMapController < ApplicationController
+end

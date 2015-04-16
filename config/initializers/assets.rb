@@ -5,7 +5,7 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( demo-bundle.js bubble_map-bundle.js history_dashboard-bundle.js current_proposal_pipeline-bundle.js organization_type_sankey-bundle.js program_treemap-bundle.js recipient_treemap-bundle.js )
 
 #let the webpack source maps work correctly by not appending a semicolon from sprockets
 Rails.application.config.assets.configure do |env|
