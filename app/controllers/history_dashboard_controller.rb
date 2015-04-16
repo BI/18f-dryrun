@@ -1,0 +1,2 @@
+class HistoryDashboardController < ApplicationController
+end

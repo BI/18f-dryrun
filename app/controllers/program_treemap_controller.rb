@@ -1,0 +1,2 @@
+class ProgramTreemapController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class OrganizationTypeSankeyController < ApplicationController
+end

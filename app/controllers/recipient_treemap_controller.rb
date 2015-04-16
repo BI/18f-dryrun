@@ -1,0 +1,2 @@
+class RecipientTreemapController < ApplicationController
+end

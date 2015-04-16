@@ -1,0 +1,2 @@
+class CurrentProposalPipelineController < ApplicationController
+end

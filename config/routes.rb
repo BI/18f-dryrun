@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get 'proposals/submission_fiscal_year/:year', to: 'proposals#submission_fiscal_year'
 
+  %w(bubble_map history_dashboard current_proposal_pipeline organization_type_sankey program_treemap recipient_treemap ).each do |cn|
+    get cn, to: "#{cn}#index"
+  end
+  
   # You can have the root of your site routed with "root"
   root 'home#index'
 

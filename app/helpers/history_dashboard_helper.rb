@@ -1,0 +1,2 @@
+module HistoryDashboardHelper
+end
