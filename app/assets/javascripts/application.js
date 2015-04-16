@@ -16,3 +16,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require webpack-bundle
+
+$(document).ready(function() {
+	$(document).foundation();	
+});
