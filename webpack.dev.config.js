@@ -10,14 +10,7 @@ var config = module.exports = {
 		'webpack-dev-server/client?http://localhost:8030', //webpack dev server
 		'webpack/hot/only-dev-server',
 		'./entry.js' //app entry point from context
-	],
-	resolve: {
-		root: [path.join(__dirname, "scripts"),
-		       path.join(__dirname, "app", "assets", "javascripts"),
-		       path.join(__dirname, "app", "assets", "stylesheets"),
-		       path.join(__dirname, "node_modules")],
-		extensions: ["", ".webpack.js", ".web.js", ".js", ".jsx", ".js.jsx", ".scss", ".css", "config.js"]
-	}
+	]
 };
 
 //add transpiler for jsx
