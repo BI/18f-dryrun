@@ -16,3 +16,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require demo-bundle
+
+
+$(document).ready(function() {
+	$(document).foundation();	
+});
