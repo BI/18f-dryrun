@@ -17,7 +17,12 @@ var config = module.exports = {
 config.module = {
 	loaders: [
 		//load jsx hot
-		{ test: /\.jsx?$/, loaders:  ['react-hot', 'jsx-loader?harmony'], exclude: /node_modules/ } 
+		{ test: /\.jsx?$/, loaders:  ['react-hot', 'jsx-loader?harmony'], exclude: /node_modules/ },
+		{ test: require.resolve('jquery'), loaders: ['expose?jQuery', 'expose?$'] },
+		{ test: /\.scss$/, loader: "style!css!sass" },
+		{ test: /\.css$/, loader: "style!css" },
+		{ test: require.resolve('zurb-foundation'), loader: 'expose?foundation' },
+		{ test: require.resolve('./node_modules/zurb-foundation/js/foundation/foundation.offcanvas.js'), loader: 'expose?foundationOffcanvas' } 
 	]
 };
 
@@ -39,9 +44,5 @@ config.resolve = {
 //make plugins like jquery available to all modules
 config.plugins = [
 	new webpack.HotModuleReplacementPlugin(),
-	new webpack.NoErrorsPlugin(),
-	new webpack.ProvidePlugin({
-		$: 'jquery',
-		jQuery: 'jquery'
-	})
+	new webpack.NoErrorsPlugin()
 ];
