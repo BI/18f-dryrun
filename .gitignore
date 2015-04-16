@@ -32,3 +32,7 @@ webpack-bundle.js.map
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# ignore webpack built bundles
+*-bundle.js
+*-bundle.js.map
