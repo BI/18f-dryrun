@@ -1,1 +1,120 @@
+
+
+<style>
+ 
+  #program-treemap {
+  background: #ddd;
+}
+
+text {
+  pointer-events: none;
+}
+
+//styles for the treemap
+
+.crumbTrail text {
+  font-weight: bold;
+  fill: white;
+}
+
+text.parent-label.label_0 {
+    fill: #351637;
+}
+
+text.parent-label.label_1 {
+    fill: rgba(5, 44, 65, 0.42);
+}
+
+rect.parent, rect.child {
+  fill: none;
+  stroke: #fff;
+}
+
+rect.parent,
+.crumbTrail rect {
+  stroke-width: 2px;
+}
+
+.crumbTrail rect {
+  fill: #336796;
+}
+
+.crumbTrail:hover rect {
+  fill: #1B3863;
+}
+
+.children rect.parent,
+.crumbTrail rect {
+  cursor: pointer;
+}
+
+.children rect.parent.color_1{
+  fill: #a9c8f4;
+  fill-opacity: .5;
+}
+
+.children rect.parent.color_2{
+  fill: #7fa1d2;
+  fill-opacity: .5;
+}
+
+.children rect.parent.color_3{
+  fill: #5479b0;
+  fill-opacity: .5;
+}
+
+.children rect.parent.color_4{
+  fill: #2a518e;
+  fill-opacity: .5;
+}
+
+.children rect.parent.color_5{
+  fill: #002A6C;
+  fill-opacity: .5;
+}
+.children text.label_0 {font-family: 'Abel', Helvetica, Arial, sans-serif;}
+
+.children.selected rect.parent {
+  fill: #FFB600;
+}
+rect.child.selected {
+  fill: #FFB600;
+}
+.children:hover rect.child {
+  fill: #546080;
+}
+
+#loading.loaded img {
+	display: none;
+}
+#loading.loaded div {
+	display: block;
+}
+#loading img {
+	display: block;
+}
+#loading div {
+	display: none;
+}
+
+</style>
+
+
 <h1><%= params[:controller] %></h1>
+Select year:
+<select id="year-select">
+	<option value="2007">2007</option>
+	<option value="2008">2008</option>
+	<option value="2009">2009</option>
+</select>
+
+Organization Type - Program Area - Awards by Organization Type
+<div id="loading">
+	<img src="assets/ajaxloader.gif"/>
+	<div id="program-treemap">
+		
+
+	</div>
+
+	<div id="program-table"></div>
+</div>
