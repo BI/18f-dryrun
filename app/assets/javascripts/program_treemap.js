@@ -36,7 +36,7 @@ function loadDataAndRender(year) {
 					  {'dimension': programAreaDimension, 'columnName': 'PROGRAM_AREA_NAME'},
 					  {'dimension': programDimension, 'columnName': 'PROGRAM_NAME'}];
 
-		programTreemap = dc.treeMap("#program-treemap")
+		var programTreemap = dc.treeMap("#program-treemap")
 								.topBarHeight(45)
 								.height(500)
 								.crumbTrailX(10)
