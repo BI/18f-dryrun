@@ -1,1 +1,89 @@
+ <style>
+    #sankey {
+  height: 400px;
+}
+
+.node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+
+/*.node rect.node-state_from {
+  fill: green;
+  stroke: #707DD8;
+}
+
+.node rect.node-state_live {
+  fill: yellow;
+  stroke: #707DD8;
+}
+
+.node rect.node-region {
+  fill: red;
+  stroke: #707DD8;
+}
+
+.node rect.node-countrycode {
+  fill: blue;
+  stroke: #707DD8;
+}*/
+
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+
+.link:hover {
+  stroke-opacity: .5;
+}
+svg {
+  font: 10px sans-serif;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#loading.loaded img {
+	display: none;
+}
+#loading.loaded div {
+	display: block;
+}
+#loading img {
+	display: block;
+}
+#loading div {
+	display: none;
+}
+
+</style>
+
+
 <h1><%= params[:controller] %></h1>
+Select year:
+<select id="year-select">
+	<option value="2007">2007</option>
+	<option value="2008">2008</option>
+	<option value="2009">2009</option>
+</select>
+
+Organization Type - Program Area - Awards by Organization Type
+<div id="loading">
+	<img src="assets/ajaxloader.gif"/>
+	<div id="organization-type-sankey">
+		
+
+	</div>
+
+	<div id="organization-type-table"></div>
+</div>
