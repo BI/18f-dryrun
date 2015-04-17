@@ -1,0 +1,97 @@
+/*
+ * Foundation Dropdown CSS used in multiple stylesheets
+ */
+$blue: #336796; //replaced slight variation #336799 in that shows in their menu with this
+
+
+/* @extends */
+ .font-Abel {
+ 	font-family: 'Abel', Helvetica, Arial, sans-serif;
+	-webkit-text-stroke:1px rgba(0,0,0,.3); /* fix for Win7 Chrome not anti-alising fonts by default */
+    font-weight: 400;
+ }
+
+
+.dropdown {
+	position:relative;
+
+	a.button {
+		@extend .font-Abel;
+
+		border-color: #d9d9d9;
+	    border-image: none;
+	    border-style: solid;
+	    border-width: 1px 20px 1px 1px;
+	    color: #333;
+	    display: block;
+	    font-size: 27px;
+	    line-height:24px;
+	    padding: 15px 5px 14px 10px;
+	    position: relative;
+
+    	&:before {
+			border-color: #666 transparent transparent;
+		    border-image: none;
+		    border-style: solid inset inset;
+		    border-width: 6px;
+		    content: '';
+		    margin-top: -3px;
+		    position: absolute;
+		    right: -16px;
+		    top: 50%;
+		}
+	}
+
+	.f-dropdown {
+		border: 1px solid #e0e0e0;
+		border-top-width:0;
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+	    margin: 0 !important;
+		max-height:300px;
+	    max-width: none;
+		overflow:auto;
+	    padding: 5px 0;
+
+	    &:before,
+		&:after {display:none;}
+
+		li {
+			border-top:1px solid #f0f0f0;
+			margin:0;
+		}
+
+		a {
+			@extend .font-Abel;
+			font-size: 18px;
+		    padding: 5px 5px 5px 6px;
+		    position: relative;
+
+		    &:hover {
+				background-color:#f6f6f6;
+				color:$blue;
+			}
+		}
+
+		.active a,
+		.active a:hover {
+			color:$blue;
+			cursor:default;
+			font-weight:bold;
+			background-color:#f6f6f6;
+		}
+	}
+
+	.columns:first-child .f-dropdown a {padding-left:65px;}
+}
+.dropdown-smaller {
+	
+	a.button {
+		font-size: 20px;
+	    padding: 10px 5px 9px 10px;
+	}
+
+	.f-dropdown {
+		
+		a {font-size:14px;}
+	}
+}

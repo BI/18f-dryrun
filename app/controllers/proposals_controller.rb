@@ -11,4 +11,14 @@ class ProposalsController < ApplicationController
 		end
 	end
 
+	def history
+		aging_type = params[:aging_type]
+
+		db_query = HistoryDashboard.where(aging_type: aging_type)
+
+		respond_to do |format|
+			format.json {render json: db_query}
+		end
+	end
+
 end

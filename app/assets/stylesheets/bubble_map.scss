@@ -1,0 +1,376 @@
+//@import "settings_widescreen",
+//        "../../node_modules/zurb-foundation/scss/foundation/components/dropdown";
+@import "dropdown";
+@import "filter_builder";
+@import "d3-tips";
+@import "loading";
+@import "fullscreen-canvas-menu";
+
+@import "../../../node_modules/dc/dc";
+@import "../../../node_modules/font-awesome/css/font-awesome";
+
+/* @extends */
+.font-Abel {
+    font-family: 'Abel', Helvetica, Arial, sans-serif;
+    -webkit-text-stroke:1px rgba(0,0,0,.3); /* fix for Win7 Chrome not anti-alising fonts by default */
+    font-weight: 400;
+}
+
+.hide-visually {
+    position: absolute;
+    left: -999999px;
+    top: auto;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+}
+
+//bubblemap.css
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+html, body, #map {
+    width: 100%;
+}
+html, body {height: 100%;}
+#mapContainer {
+    height: 82%;
+    border-bottom:1px solid #ddd;
+    overflow: hidden;
+    width: 100%;
+}
+
+#pieCharts {
+    position: absolute;
+    bottom: 18.5%;
+    left:1.5%;
+    width:38%;
+    pointer-events: none;
+
+    #assistanceCategory,
+    #agencyCategory {
+        float:left;
+        clear:left;
+
+        &.dc-chart svg {float:left;}
+    }
+    .dc-chart {
+        path,
+        .dc-legend-item {pointer-events: auto;}
+    }
+}
+
+.partial-data-message {
+    top: 9px;
+    position: absolute;
+    left: -7px;
+    min-width: 346px;
+    margin-left: -346px;
+
+    .notification-warning {
+        padding: 3px 15px 2px 23px;
+        background-color: #ffffbd;
+        border: 1px solid #e6e6e6;
+        position: relative;
+    
+        .fa {
+            color: #555;
+            top: 4px;
+            left: 6px;
+            font-size: 17px;
+            position: absolute;
+        }
+
+        p {
+            font-size: 12px;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        a {
+            font-size: 14px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            display: block;
+            width: 18px;
+            height: 24px;
+
+            .fa {
+                position: static;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+
+            &:hover .fa {
+                color: #ccc;
+                text-shadow: 0 0 0 rgba(0,0,0,.4);
+            }
+        }
+    }
+
+    &.hide-partial-data-message {display:none;}
+}
+
+
+
+#year {
+    position: absolute;
+    bottom: 0;
+    left:5px;
+
+    .axis-label {font-size:.625em;}
+}
+.total-funding {
+    @extend .font-Abel;
+    font-size: 54px;
+    left: 6px;
+    line-height: 1;
+    pointer-events: none;
+    position: relative;
+    min-height: 86px;
+    text-align: left;
+    top: 4px;
+    z-index: 98;
+    float: left;
+
+    span {display:inline-block;}
+
+    h2.label {
+        @extend .font-Abel;
+        font-size: 19px;
+        text-indent: 3px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+        display: block;
+        margin-top: 1px;
+        position: absolute;
+        bottom: 0;
+        white-space: nowrap;
+    }
+}
+#year-player-panel {
+    pointer-events: auto;
+    position: relative;
+    right: 1%;
+    text-align: center;
+    top: -4px;
+    width: 145px;
+    z-index: 98;
+    float: right;
+
+    .dropdown {
+        margin:0 5px 0 0;
+
+        .f-dropdown {
+            left:auto !important;
+            right:6px !important;
+        }
+
+        a.button { //#selected-year
+            font-size: 58px;
+            padding: 2px 0px;
+            line-height: 58px;
+            min-height: 58px;
+            text-decoration: none;
+            background-color: transparent;
+            border-color: transparent;
+
+            &.open {border-bottom:1px solid #e0e0e0;}
+        }
+    }
+}
+
+#player-controls {
+    font-size: 30px;
+    clear:both;
+    text-align: center;
+    color: #336799;
+
+    .active {color: #666;}
+    i {
+        cursor:pointer;
+        margin-right: 8px;
+        padding: 4px 3px;
+
+        &:hover {color: #C2113A;}
+    }
+
+}
+
+.dc-chart circle.bubble {
+    fill: #336799;    
+}
+
+.dc-chart g {
+    circle.bubble:hover {
+        fill-opacity: 1;
+        stroke: #C2113A;
+        stroke-width: 1;
+    }
+
+    text.chart-label {
+        font-size:12px;
+        fill:#222;
+
+        &.chart-label-center {text-anchor:middle;text-align:center;}
+    }
+
+    &.selected {
+        text {
+            fill: #fff;
+            stroke: #fff;
+        }
+        circle {
+            fill-opacity: 1;
+            stroke: #C2113A;
+            stroke-width: 1;
+        }
+    }
+    &.deselected {
+        circle {
+            fill-opacity: 0.2;
+        }
+        text {
+            display: block;
+            opacity: 0.1;
+        }
+    }
+    &.node text {
+        fill: #002A6C;
+        pointer-events: none;
+    }
+    &.node:hover {text-color: #C2113A;}
+
+    &.row {
+        text {fill: black;}
+        rect:hover {
+            fill-opacity: 1.0;
+            fill: #3182bd;
+        }
+    }
+}
+
+.dc-chart .country path {
+    stroke-width: 1;
+    stroke: #fff;
+
+    &:hover {
+        fill: #ccc;
+        cursor: auto;
+    }
+}
+g.country path {
+  cursor: pointer;    
+}
+
+.filter-container {
+    position: absolute;
+    z-index: 100000;
+    width:100%;
+    pointer-events:none;
+
+    a.close-window {
+        font-size: 21px;
+        color: #333;
+        padding: 4px 6px 4px 8px;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        pointer-events: auto;
+
+        &:hover {color:#C2113A;}
+    }
+
+    .filter-builder {
+        padding-right:32px;
+        & > ul {padding-right:22px;}
+        h2 {left: 6px;}
+        li.add-filter {margin-left:6px;}
+    }
+}
+
+.landscape-only {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    z-index: 9999999;
+    padding: 0;
+    opacity:0;
+    top:-101%;
+    transition:none;
+
+    & > div {
+        @extend .font-Abel;
+        width: 80%;
+        max-width: 600px;
+        min-height: 120px;
+        background-color: #fff;
+        margin: -50px auto 0;
+        padding: 2px 25px;
+        text-align: center;
+        position: relative;
+        top: 50%;
+        }
+    p {
+        margin:-1.2em 0 6px;
+        font-size:3.5em;
+        line-height: 1em;
+    }
+}
+
+@media only screen and (max-width: 740px), screen and (max-height: 500px) {
+    #mapContainer {height: 78%;}
+
+    #assistanceCategory,
+    #agencyCategory {display:none;}
+
+    #year-player-panel {
+        top: 0;
+        width: 102px;
+
+        .dropdown a.button {
+            font-size: 38px;
+            line-height: 38px;
+            min-height: 38px;
+        }
+
+        .dropdown .f-dropdown {
+            max-height:400%;
+        }
+    }
+
+    .total-funding {
+        font-size: 38px;
+        line-height: 38px;
+        padding-top: 3px;
+
+        label {
+            font-size: 16px;
+            line-height:16px;
+        }
+    }
+    #player-controls {
+        font-size: 24px;
+        position: absolute;
+        right: 0;
+        top: 39px;
+
+        .fa-step-backward,
+        .fa-step-forward {display:none;}
+    }
+
+}
+@media only screen and (orientation:portrait) {
+    .landscape-only {top:0;opacity:1;transition: opacity 38ms ease;}
+}
+@media only screen and (orientation:landscape) {
+    .landscape-only {top:-101%;opacity:0;transition: opacity 38ms ease;}
+}
+@media only screen and (max-width: 480px) {
+    .landscape-only {top:0;opacity:1;transition: opacity 38ms ease;}
+    .landscape-only p {font-size:2.1em;}
+}
