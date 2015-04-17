@@ -11,6 +11,10 @@ $fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // 
         "../../../node_modules/font-awesome/scss/font-awesome";
 
 /**/
+
+$link-color: #0a5691;
+$link-color-hover: #297cbd;
+
 .page-title {
 	font-size:2em;
 }
@@ -18,7 +22,7 @@ $fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // 
 	margin-bottom: 1.5em !important;
 
 	a {
-		color:#008CBA;
+		color:$link-color;
 
 		border: 1px solid rgba(0, 0, 0, 0.1);
 		box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
@@ -38,6 +42,7 @@ $fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // 
 		i {
 			font-size: 6em;
 			margin-top: .25em;
+			text-shadow: 0px 0px 1px $link-color-hover;
 		}
 		span {
 			display: block;
@@ -46,18 +51,19 @@ $fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // 
 			text-shadow: 0 -1px 1px rgba(255,255,255,1);
 			margin-top:.5em;
 		}
-		&:focus {border-color:#008CBA;}
-		&:active {border-color:#008CBA;}
+		&:focus {border-color:$link-color;}
+		&:active {border-color:$link-color;}
 
 		&:hover,
 		&:focus,
 		&:active {
+			background-color:#ebebeb;
 			box-shadow: 1px 1px 1px 0 rgba(120, 120, 120, 0.1);
 			top:1px;
 			left:1px;
 			color:#000;
 
-			i {color:#000;}
+			i {color:$link-color-hover;}
 			span {display: block;}
 		}
 	}
@@ -110,6 +116,16 @@ $fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // 
 }
 .row-content {
 	background-color:#fff;
+
+	a {
+		color:$link-color;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color:$link-color-hover;
+		}
+	}
 }
 
 /*off-canvas fullscreen layout*/
@@ -225,6 +241,15 @@ a.right-off-canvas-toggle {
 			padding: 15px 0 0 0;
 			max-width: 540px;
 			border-top: 1px solid #eee;
+		}
+		a {
+			color:$link-color;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color:$link-color-hover;
+			}
 		}
 	}
 }
