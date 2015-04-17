@@ -1,1 +1,48 @@
-<h1><%= params[:controller] %></h1>
+
+            <div class="main-section">
+              <a href="menu" class="menu-mobile-trigger right-off-canvas-toggle">Menu <span aria-hidden="true">+</span></a>
+              <div class="landscape-only" aria-hidden="true"><div><p>This page is best viewed in a landscape orientation</p></div></div>
+              <div id="loading" aria-hidden="true"><div><p></p></div></div>
+              
+              <h1 class="hide-visually" tabindex="0">{{title}}</h1>
+              <div class="filter-container">
+                <div id="filter-builder"></div>
+                <div class="clearfix"></div>
+
+                <div class="total-proposals" tabindex="0"><h2 class="label">Total Proposals</h2><span>$</span><span id="total-proposals-value"></span></div>
+                <div id="year-player-panel">
+                    <div class="partial-data-message">
+                        <div class="notification notification-warning">
+                            <i class="fa fa-exclamation-circle"></i>
+                            <p><strong>WARNING:&#160;</strong><span class="text"></span><a href="javascript:void(0);" id="dismiss-notification"><i class="fa fa-times"></i><span class="hide-visually">Close</span></a></p>
+                        </div>
+                    </div>
+                    <div class="dropdown" tabindex="0">
+                        <h2 class="hide-visually">Selected Year</h2>
+                        <a data-dropdown="dropdown_changeYear" class="button" href="#" id="selected-year"></a>
+                        <ul data-dropdown-content="" class="f-dropdown" id="dropdown_changeYear"></ul>
+                    </div>
+                    <div id="player-controls" aria-hidden="true">
+                        <h2 class="hide-visually">Timeline Controls</h2>
+                        <i class="fa fa-step-backward prev"></i><i class="fa fa-pause pause"></i><i class="fa fa-play play"></i><i class="fa fa-step-forward next"></i>
+                    </div>
+                </div>
+              </div>
+              <!-- 508 compliance section -->
+              <div id="audio-bubble-list" tabindex="0"></div>
+
+              <h2 class="hide-visually">Bubble Chart</h2>
+              <div id="mapContainer"></div>
+              <div id="pieCharts">
+                <h2 class="hide-visually">Organization Type</h2>
+                <div id="organizationType"></div>
+                <h2 class="hide-visually">Program Area</h2>
+                <div id="programArea"></div>
+                <h2 class="hide-visually">Award Status</h2>
+                <div id="awardStatus"></div>
+              </div>
+              <h2 class="hide-visually">Proposal Count by Submission Fiscal Year</h2>
+              <div id="year"></div>
+
+
+           
