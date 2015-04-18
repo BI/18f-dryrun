@@ -13,6 +13,7 @@
 	<a href="#skip_menu" class="skip-link allow-focus">Skip to main content</a>
 	<div class="off-canvas-wrap" data-offcanvas>
 	<div class="inner-wrap">
+
 		<!-- off-canvas menu -->
 		<nav id="right-menu" class="right-off-canvas-menu">
 			<div class="off-canvas-menu-container">
@@ -30,10 +31,10 @@
 			</div>
 		</nav>
 
-
 		<!-- main content goes here -->
 		<div class="canvas-content">
 			<a id="skip_menu" name="skip_content" tab-index="-1"></a>
+			<% if params[:controller] != 'organization_type_sankey' %>
 			<div class="row row-title">
 				<div class="small-12 columns">
 					<h1><%= params[:controller] %></h1>
@@ -41,6 +42,7 @@
 					<a href="right-menu" role="button" class="right-off-canvas-toggle">Menu<span></span></a>
 				</div>
 			</div>
+			<% end %>
 			<div class="row row-content">
 				<div class="small-12 columns">
 

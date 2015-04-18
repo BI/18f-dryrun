@@ -28,6 +28,8 @@ function loadDataAndRender(year) {
 		programAreaDimension = crossfilterData.dimension(function(d) {return d.PROGRAM_AREA_NAME;})
 		awardsOrgType = crossfilterData.dimension(function(d) {return d.award_organization_type;})
 
+		programGroup = orgTypeDimension.group();
+
 		var levels = [{'dimension': orgTypeDimension, 'columnName': 'ORGANIZATION_TYPE'},
 					  {'dimension': programAreaDimension, 'columnName': 'PROGRAM_AREA_NAME'},
 					  {'dimension': awardsOrgType, 'columnName': 'award_organization_type'}];
@@ -38,6 +40,17 @@ function loadDataAndRender(year) {
 								.levels(levels)
 								.measureColumn('measure')
 								.nodeWidth(30);
+
+		proposalsTable = dc.dynatableComponent("#organization-type-table")
+							.dimension(orgTypeDimension)
+							.group(programGroup)
+							.columns([{label: "Proposal", csvColumnName: "PROPOSAL_TITLE"},
+									  {label: "Organization Type", csvColumnName: "ORGANIZATION_TYPE"},
+					                  {label: "Program Area", csvColumnName: "PROGRAM_AREA_NAME"},
+					                  {label: "Organization Awarded", csvColumnName: "award_organization_type"},
+					                  {label: "Opportunity Begin Date", csvColumnName: 'FUNDING_OPPORTUNITY_BEGIN_DATE'},
+					                  {label: "Opportunity End Date", csvColumnName: 'FUNDING_OPPORTUNITY_END_DATE', alignment: "right"}])
+
 		dc.renderAll();
 		$('#loading').addClass('loaded');
 		console.log(data[0]);
