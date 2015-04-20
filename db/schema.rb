@@ -13,25 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150417204044) do
 
-  create_table "bubble_map", id: false, force: true do |t|
-    t.integer "fiscal_year"
-    t.string  "program_area_name"
-    t.string  "organization_type"
-    t.string  "award_status",      limit: 11
-    t.integer "cnt_award_status",  limit: 8,   default: 0, null: false
-    t.string  "state_code"
-    t.string  "state_name",        limit: 200
-  end
-
-  create_table "history_dashboard", id: false, force: true do |t|
-    t.integer "fiscal_year"
-    t.string  "program_area_name"
-    t.string  "program_name"
-    t.integer "award_days"
-    t.integer "cnt_proposals",     limit: 8,  default: 0, null: false
-    t.string  "aging_type",        limit: 23
-  end
-
   create_table "history_dashboards", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -77,6 +58,11 @@ ActiveRecord::Schema.define(version: 20150417204044) do
     t.string   "KEYWORDS"
   end
 
+  create_table "proposals", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "proposals_view", id: false, force: true do |t|
     t.string  "PROPOSAL_NUMBER"
     t.string  "STATUS"
@@ -115,6 +101,7 @@ ActiveRecord::Schema.define(version: 20150417204044) do
     t.string  "NIFA_PROJECT_NUMBER"
     t.string  "PROPOSAL_TITLE"
     t.string  "KEYWORDS"
+    t.integer "Fiscal_Year"
     t.binary  "deleted_at",                     limit: 0
   end
 
