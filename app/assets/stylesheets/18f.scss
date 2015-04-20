@@ -10,6 +10,19 @@ $fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // 
         "../../../node_modules/zurb-foundation/scss/foundation/components/offcanvas",
         "../../../node_modules/font-awesome/scss/font-awesome";
 
+#loading.loaded img {
+    display: none;
+}
+#loading.loaded div {
+    display: block;
+}
+#loading img {
+    display: block;
+}
+#loading div {
+    display: none;
+}
+
 /**/
 .page-title {
 	font-size:2em;
