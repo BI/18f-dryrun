@@ -11,6 +11,8 @@ var foundationOffcanvas = require('../../../node_modules/zurb-foundation/js/foun
 
 require('../../../node_modules/dc/dc.css');
 require('../stylesheets/18f.scss');
+require('../stylesheets/_filter_builder.scss');
+require('../stylesheets/_d3-tips.scss');
 
 $(document).ready(function() {
 	$(document).foundation();	
@@ -60,6 +62,33 @@ function loadDataAndRender(agingType) {
 							 .dimension(daysToAward)
 							 .group(daysToAwardGroup);
 
+
+
+		toolTipFunction = function(chartName, subselector){
+
+				return function(){
+			        var tt = d3.tip()
+			          .attr('class', 'd3-tip-mouse')
+			          .attr('id', 'd3-tip-'+chartName)
+			          .positionAnchor('mouse')
+			          .html(function (d) {
+			            return "<label>" + (d.key || d.data.key) + "</label><br/>" + (d.value || d.data.value);
+			          });
+
+			        var rows = d3.selectAll('#'+chartName+' '+subselector);
+
+			        //HACK: tried to use .call like the map but onresize x cant be found, had to do this on the pie charts also
+			        if (!d3.select('#d3-tip').empty()) d3.select('#d3-tip').remove();
+
+			        rows.call(tt);
+			        rows.on('mouseover', tt.show)
+			            .on('mouseout', tt.hide)
+			            .on('mousemove', tt.updatePosition)
+			            .on('click', tt.hide);
+			    };
+			    
+		};
+
 		fiscalYearDomain = [];
 		firstYear = fiscalYear.bottom(1)[0].fiscal_year;
 		lastYear = fiscalYear.top(1)[0].fiscal_year;
@@ -76,30 +105,43 @@ function loadDataAndRender(agingType) {
 						     .x(d3.scale.ordinal().domain(fiscalYearDomain))
 						     .xUnits(dc.units.ordinal);
 
+		fiscalYearChart.renderlet(toolTipFunction('fiscalYearChart','rect.bar'));
 
-		programAreaChart = dc.rowChart('#programAreaChart')
-							.dimension(programArea)
-							.group(programAreaGroup)
-							.ordering(function(d) { return -d.value})
-						    .cap(30)
-						    .height(600)
-						    .width(500)
-						    .renderTitle(false)
-						    .elasticX(true)
-						    .xAxis()
-						      .ticks(4);
 
-		programChart = dc.rowChart('#programChart')
-							.dimension(program)
-							.group(programGroup)
-							.ordering(function(d) { return -d.value})
-						    .cap(30)
-						    .height(600)
-						    .width(500)
-						    .renderTitle(false)
-						    .elasticX(true)
-						    .xAxis()
-						      .ticks(4);
+		programAreaChart = dc.rowChart('#programAreaChart');
+		programAreaChart
+			.dimension(programArea)
+			.group(programAreaGroup)
+			.ordering(function(d) { return -d.value})
+		    .cap(30)
+		    .height(600)
+		    .width(500)
+		    .renderTitle(false)
+		    .elasticX(true)
+		    .xAxis()
+		      .ticks(4);
+
+		programAreaChart.renderlet(toolTipFunction('programAreaChart','g.row'));
+
+		programChart = dc.rowChart('#programChart');
+		programChart
+			.dimension(program)
+			.group(programGroup)
+			.ordering(function(d) { return -d.value})
+		    .cap(30)
+		    .height(600)
+		    .width(500)
+		    .renderTitle(false)
+		    .elasticX(true)
+		    .xAxis()
+		      .ticks(4);
+
+		programChart.renderlet(toolTipFunction('programChart','g.row'));
+
+		filterBuilder = dc.filterBuilder('#filterBuilder')
+	      .filterSources([{chart: programAreaChart, icon: 'globe', label: "Program Area"},
+	        {chart: programChart, icon: 'tag', label: "Program"},
+	        {chart: fiscalYearChart, icon: 'institution', label: "Fiscal Year"}]);
 		
 		dc.renderAll();
 		$('#loading').addClass('loaded');

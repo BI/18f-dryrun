@@ -36,7 +36,7 @@
 			<a id="skip_menu" name="skip_content" tab-index="-1"></a>
 			<div class="row row-title">
 				<div class="small-12 columns">
-					<h1><%= params[:controller] %></h1>
+					<h1><%= (@page_title || params[:controller]).titleize %></h1>
 					<!-- right menu trigger -->
 					<a href="right-menu" role="button" class="right-off-canvas-toggle">Menu<span></span></a>
 				</div>
