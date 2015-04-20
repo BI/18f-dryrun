@@ -5,38 +5,23 @@ var qd = require('quickdash-core'),
     dc = require('dc-custom'),
     fastclick = require('fastclick'),
     dtip = require('d3-tip')(d3);
+var foundation = require('zurb-foundation');
+var foundationOffcanvas = require('../../../node_modules/zurb-foundation/js/foundation/foundation.offcanvas.js');
+var programTreemap;
 
-console.log("Hello world!!!");
+require('../stylesheets/18f.scss');
+require('../stylesheets/program_treemap.scss');
+
+$(document).ready(function() {
+	$(document).foundation();        
+});
 
 // var df = require('./lib/bubblemap-factories'),
 //     dataConfig = require('./lib/bubblemap-data-config');
 
 $(document).ready(function(){
-	loadDataAndRender($('#year-select').val())
 
-	//load data based on year selected
-	$('#year-select').on("change", function(){
-		loadDataAndRender(this.value);
-	});
-
-});
-
-//make request for data based on year and load data for the chart
-function loadDataAndRender(year) {
-	$('#loading').removeClass('loaded');
-
-	//make the request
-	$.get("proposals/submission_fiscal_year/" + year + ".json", function(data, status) {
-		crossfilterData = crossfilter(data);
-		awardsOrgType = crossfilterData.dimension(function(d) {return d.award_organization_type;})
-		programAreaDimension = crossfilterData.dimension(function(d) {return d.PROGRAM_AREA_NAME;})
-		programDimension = crossfilterData.dimension(function(d) {return d.PROGRAM_NAME})
-
-		var levels = [{'dimension': awardsOrgType, 'columnName': 'award_organization_type'},
-					  {'dimension': programAreaDimension, 'columnName': 'PROGRAM_AREA_NAME'},
-					  {'dimension': programDimension, 'columnName': 'PROGRAM_NAME'}];
-
-		var programTreemap = dc.treeMap("#program-treemap")
+	programTreemap = dc.treeMap("#program-treemap")
 								.topBarHeight(45)
 								.height(500)
 								.crumbTrailX(10)
@@ -105,7 +90,6 @@ function loadDataAndRender(year) {
 
 							        });
 							      }])
-								.levels(levels)
 								.measureColumn('measure')
 								.rootName("")
 								.titleBarCaption(function(dataNode) {
@@ -125,7 +109,52 @@ function loadDataAndRender(year) {
 								    })
 								.colors(d3.scale.ordinal().range(["1", "2", "3", "4", "5"]))
 			                    .showNegativeTotal(true);
+
+	loadDataAndRender($('#year-select').val())
+
+	//load data based on year selected
+	$('#year-select').on("change", function(){
+		loadDataAndRender(this.value);
+	});
+
+});
+
+//make request for data based on year and load data for the chart
+function loadDataAndRender(year) {
+	$('#loading').removeClass('loaded');
+
+	//make the request
+	$.get("proposals/submission_fiscal_year/" + year + ".json", function(data, status) {
+		var crossfilterData = crossfilter(data);
+		var awardsOrgType = crossfilterData.dimension(function(d) {return d.award_organization_type;})
+		var programAreaDimension = crossfilterData.dimension(function(d) {return d.PROGRAM_AREA_NAME;})
+		var programDimension = crossfilterData.dimension(function(d) {return d.PROGRAM_NAME})
+
+		var programGroup = awardsOrgType.group();
+
+		var levels = [{'dimension': awardsOrgType, 'columnName': 'award_organization_type'},
+					  {'dimension': programAreaDimension, 'columnName': 'PROGRAM_AREA_NAME'},
+					  {'dimension': programDimension, 'columnName': 'PROGRAM_NAME'}];
+
+		
+		programTreemap.levels(levels);
+
+		var proposalsTable = dc.dynatableComponent("#organization-type-table")
+							.dimension(awardsOrgType)
+							.group(programGroup)
+							.columns([{label: "Proposal", csvColumnName: "PROPOSAL_TITLE"},
+									  {label: "Organization Type", csvColumnName: "ORGANIZATION_TYPE"},
+					                  {label: "Program Area", csvColumnName: "PROGRAM_AREA_NAME"},
+					                  {label: "Organization Awarded", csvColumnName: "award_organization_type"},
+					                  {label: "Opportunity Begin Date", csvColumnName: 'FUNDING_OPPORTUNITY_BEGIN_DATE'},
+					                  {label: "Opportunity End Date", csvColumnName: 'FUNDING_OPPORTUNITY_END_DATE', alignment: "right"}])
+
+
 		dc.renderAll();
+		programTreemap.filterAll();
+		programTreemap.redraw();
+		proposalsTable.redraw();
+
 		$('#loading').addClass('loaded');
 		console.log(data[0]);
 	});
