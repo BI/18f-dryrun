@@ -6,6 +6,10 @@ var foundationOffcanvas = require('../../../node_modules/zurb-foundation/js/foun
 
 require('../stylesheets/18f.scss');
 
+$(document).ready(function() {
+	$(document).foundation();	
+});
+
 /*
 //dont need
 document.addEventListener('DOMContentLoaded', function() {

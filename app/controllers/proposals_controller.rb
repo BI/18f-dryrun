@@ -14,9 +14,13 @@ class ProposalsController < ApplicationController
 	def history
 		aging_type = params[:aging_type]
 
-		db_query = HistoryDashboard.where(aging_type: aging_type)
+		puts "\n\nAGING TYPE: #{aging_type}\n\n"
+
+		db_query = HistoryDashboard.where(:aging_type => aging_type)
 
 		respond_to do |format|
+			puts "FORMAT: #{format}\n\n"
+			puts "db_query: #{db_query}\n\n"
 			format.json {render json: db_query}
 		end
 	end
