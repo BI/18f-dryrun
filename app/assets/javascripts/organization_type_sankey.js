@@ -5,6 +5,15 @@ var qd = require('quickdash-core'),
     dc = require('dc-custom'),
     fastclick = require('fastclick'),
     dtip = require('d3-tip')(d3);
+var foundation = require('zurb-foundation');
+var foundationOffcanvas = require('../../../node_modules/zurb-foundation/js/foundation/foundation.offcanvas.js');
+
+require('../stylesheets/18f.scss');
+require('../stylesheets/organization_type_sankey.scss');
+
+$(document).ready(function() {
+	$(document).foundation();        
+});
 
 // var df = require('./lib/bubblemap-factories'),
 //     dataConfig = require('./lib/bubblemap-data-config');
