@@ -6,6 +6,16 @@ var qd = require('quickdash-core'),
     fastclick = require('fastclick'),
     dtip = require('d3-tip')(d3);
 
+var foundation = require('zurb-foundation');
+var foundationOffcanvas = require('../../../node_modules/zurb-foundation/js/foundation/foundation.offcanvas.js');
+
+require('../../../node_modules/dc/dc.css');
+require('../stylesheets/18f.scss');
+
+$(document).ready(function() {
+	$(document).foundation();	
+});
+
 
 $(document).ready(function(){
 	loadDataAndRender($('#aging-type').val())
@@ -40,16 +50,59 @@ function loadDataAndRender(agingType) {
 			  return Math.round(d[measureColumn]) || 0;
 		});
 
+		daysToAwardDomain = [daysToAward.bottom(1)[0].award_days, daysToAward.top(1)[0].award_days];
 		daysToAwardChart = dc.barChart('#daysToAwardChart')
-							 .x(d3.scale.linear().domain([0, 900]))
-							 .width(900)
+							 .x(d3.scale.linear().domain(daysToAwardDomain))
+							 .width(500)
 							 .height(350)
+							 .elasticY(true)
+							 .elasticX(true)
 							 .dimension(daysToAward)
 							 .group(daysToAwardGroup);
+
+		fiscalYearDomain = [];
+		firstYear = fiscalYear.bottom(1)[0].fiscal_year;
+		lastYear = fiscalYear.top(1)[0].fiscal_year;
+		for(var y = firstYear; y < lastYear; y++){
+			fiscalYearDomain.push(y);
+		}
+		fiscalYearChart = dc.barChart('#fiscalYearChart')						 
+							 .width(500)
+							 .height(350)
+							 .dimension(fiscalYear)
+							 .group(fiscalYearGroup)
+							 .elasticY(true)
+						     .renderTitle(false)
+						     .x(d3.scale.ordinal().domain(fiscalYearDomain))
+						     .xUnits(dc.units.ordinal);
+
+
+		programAreaChart = dc.rowChart('#programAreaChart')
+							.dimension(programArea)
+							.group(programAreaGroup)
+							.ordering(function(d) { return -d.value})
+						    .cap(30)
+						    .height(600)
+						    .width(500)
+						    .renderTitle(false)
+						    .elasticX(true)
+						    .xAxis()
+						      .ticks(4);
+
+		programChart = dc.rowChart('#programChart')
+							.dimension(program)
+							.group(programGroup)
+							.ordering(function(d) { return -d.value})
+						    .cap(30)
+						    .height(600)
+						    .width(500)
+						    .renderTitle(false)
+						    .elasticX(true)
+						    .xAxis()
+						      .ticks(4);
 		
 		dc.renderAll();
 		$('#loading').addClass('loaded');
-		console.log(data[0]);
 	});
 }
 

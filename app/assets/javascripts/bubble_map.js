@@ -10,13 +10,11 @@ var qd = require('quickdash-core'),
     fndOffCanvas = require('../../../node_modules/zurb-foundation/js/foundation/foundation.offcanvas.js'),
     fndAccordion = require('../../../node_modules/zurb-foundation/js/foundation/foundation.accordion.js'),
     fndDropFix = require('../../../node_modules/zurb-foundation/js/foundation/foundation.dropdown.js');
-    
-    console.log(d3);
 
 d3tip = require('d3-tip');
 dtip = d3tip(d3);
 
-console.log(d3.tip);
+
     
 var df = require('./lib/bubblemap-factories'),
     dataConfig = require('./lib/bubblemap-data-config');
