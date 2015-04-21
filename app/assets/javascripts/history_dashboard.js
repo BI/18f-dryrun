@@ -9,7 +9,7 @@ var qd = require('quickdash-core'),
 var foundation = require('zurb-foundation');
 var foundationOffcanvas = require('../../../node_modules/zurb-foundation/js/foundation/foundation.offcanvas.js');
 
-require('../../../node_modules/dc/dc.css');
+require('../../../node_modules/dc-custom/node_modules/dc/dc.css');
 require('../stylesheets/18f.scss');
 require('../stylesheets/_filter_builder.scss');
 require('../stylesheets/_d3-tips.scss');
