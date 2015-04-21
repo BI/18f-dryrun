@@ -4,6 +4,7 @@
 <head>
   <title>RailsWebpackStarterKit</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag params[:controller] + '-bundle' %>
   <%= csrf_meta_tags %>
@@ -12,6 +13,7 @@
 	<a href="#skip_menu" class="skip-link allow-focus">Skip to main content</a>
 	<div class="off-canvas-wrap" data-offcanvas>
 	<div class="inner-wrap">
+
 		<!-- off-canvas menu -->
 		<nav id="right-menu" class="right-off-canvas-menu">
 			<div class="off-canvas-menu-container">
@@ -21,28 +23,29 @@
 				add .current class functionality
 				-->
 				<ul>
-					<li><a href="javascript:void(0);">Menu Link</a></li>
-					<li><a href="javascript:void(0);">Menu Link</a></li>
-					<li><a href="javascript:void(0);" class="current">Menu Link</a></li>
-					<li><a href="javascript:void(0);">Menu Link</a></li>
+					<li><a href="history_dashboard">Proposals Aging History</a></li>
+					<li><a href="program_treemap">Program Treemap</a></li>
+					<li><a href="organization_type_sankey">Organization Type Sankey</a></li>
+					<li><a href="javascript:void(0);">Proposal Trends</a></li>
 				</ul>
 			</div>
 		</nav>
-
 
 		<!-- main content goes here -->
 		<div class="canvas-content">
 			<a id="skip_menu" name="skip_content" tab-index="-1"></a>
 			<div class="row row-title">
 				<div class="small-12 columns">
-					<h1><%= params[:controller] %></h1>
+					<h1><%= (@page_title || params[:controller]).titleize %></h1>
 					<!-- right menu trigger -->
 					<a href="right-menu" role="button" class="right-off-canvas-toggle">Menu<span></span></a>
 				</div>
 			</div>
+			<div class="row"><div class="small-12 columns" id="filterBuilder"></div></div>
 			<div class="row row-content">
-				<div class="small-12 columns">
 
+				<div class="small-12 columns">
+					
 
 					<%= yield %>
 
