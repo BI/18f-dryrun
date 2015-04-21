@@ -78,15 +78,15 @@ function loadDataAndRender(agingType) {
 			        var rows = d3.selectAll('#'+chartName+' '+subselector);
 
 			        //HACK: tried to use .call like the map but onresize x cant be found, had to do this on the pie charts also
-			        if (!d3.select('#d3-tip').empty()) d3.select('#d3-tip').remove();
+			        if (!d3.select('#d3-tip-'+chartName).empty()) d3.select('#d3-tip-'+chartName).remove();
 
 			        rows.call(tt);
 			        rows.on('mouseover', tt.show)
 			            .on('mouseout', tt.hide)
-			            .on('mousemove', tt.updatePosition)
-			            .on('click', tt.hide);
+			            .on('mousemove', tt.updatePosition);
+			            //.on('click', tt.hide);
 			    };
-			    
+
 		};
 
 		fiscalYearDomain = [];

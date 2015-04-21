@@ -23,10 +23,10 @@
 				add .current class functionality
 				-->
 				<ul>
-					<li><a href="javascript:void(0);">Menu Link</a></li>
-					<li><a href="javascript:void(0);">Menu Link</a></li>
-					<li><a href="javascript:void(0);" class="current">Menu Link</a></li>
-					<li><a href="javascript:void(0);">Menu Link</a></li>
+					<li><a href="history_dashboard">Proposals Aging History</a></li>
+					<li><a href="program_treemap">Program Treemap</a></li>
+					<li><a href="organization_type_sankey">Organization Type Sankey</a></li>
+					<li><a href="javascript:void(0);">Proposal Trends</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -41,9 +41,11 @@
 					<a href="right-menu" role="button" class="right-off-canvas-toggle">Menu<span></span></a>
 				</div>
 			</div>
+			<div class="row"><div class="small-12 columns" id="filterBuilder"></div></div>
 			<div class="row row-content">
-				<div class="small-12 columns">
 
+				<div class="small-12 columns">
+					
 
 					<%= yield %>
 
