@@ -47,7 +47,7 @@
     "dynatable": "git://github.com/BI/jquery-dynatable",
     "fastclick": "~1.0.6",
     "inflection": "~1.3.8",
-    "quickdash-core": "git+https://github.com/BI/quickdash-core",
-    "dc-custom": "git+https://github.com/BI/dc-custom"
+    "quickdash-core": "git://github.com/BI/quickdash-core",
+    "dc-custom": "git://github.com/BI/dc-custom"
   }
 }
