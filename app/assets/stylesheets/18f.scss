@@ -68,11 +68,18 @@ $fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // 
 
 
 /* Organization Type Table */
-
+p.note {
+	padding: .4em;
+	background-color: #ffc;
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
 #organization-type-table {
     position:relative;
     width:100%;
     margin-top: 30px;
+    margin-bottom: 44px;
+
     table.dc-datatable {
         margin: 15px 0;
         width: 100%;
@@ -84,16 +91,20 @@ $fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // 
             text-align: left;
             padding: 5px 5px;
         }
-        th a {
-            color:#222;
+        th {
+        	background-color:#eee;
+        	text-shadow: 0 -1px 0 rgba(255,255,255,.5);
+        	a {
+	            color:#222;
 
-            .dynatable-arrow {
-                color: #666;
-                display: inline-block;
-                font-size: 11px;
-                margin-left: 3px;
-            }
-        }
+	            .dynatable-arrow {
+	                color: #666;
+	                display: inline-block;
+	                font-size: 11px;
+	                margin-left: 3px;
+	            }
+	        }
+	    }
     }
 
     .dynatable-search {
@@ -102,6 +113,7 @@ $fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // 
         top: -28px;
         right: 5px;
         font-size: 11px;
+        line-height: 2.4em;
         width: 50%;
         padding-left: 45px;
         text-indent: -45px;
@@ -130,6 +142,7 @@ $fa-font-path:"//netdna.bootstrapcdn.com/font-awesome/4.1.0/fonts" !default; // 
             margin-left: 3px;
             margin-top:2px;
             font-size: 11px;
+            line-height: 2.2em;
             text-shadow: 0 -1px 0 rgba(255,255,255, 0.6);
         }
 

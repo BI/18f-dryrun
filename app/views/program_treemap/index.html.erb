@@ -1,20 +1,29 @@
+<!--h2>Program Treemap</h2-->
+<div class="row">
+	<div class="page-select columns small-12">
+		<label>Select year:</label>
+		<span>
+			<select id="year-select">
+				<option value="2007">2007</option>
+				<option value="2008">2008</option>
+				<option value="2009">2009</option>
+			</select>
+		</span>
+	</div>
+</div>
+<div class="row">
+	<div id="loading" class="load-in-content" aria-hidden="true">
+		<img src="assets/ajaxloader.gif">
+	</div>
 
-
-
-<h2>Program Treemap</h2>
-Select year:
-<select id="year-select">
-	<option value="2007">2007</option>
-	<option value="2008">2008</option>
-	<option value="2009">2009</option>
-</select>
-
-<div id="loading">
-	<img src="assets/ajaxloader.gif"/>
-	<div id="program-treemap">
+	<div id="chartWidth" class="columns small-12">
+		<div id="program-treemap">
 		
 
+		</div>
+		<p class="note">Find filtered proposal data below:</p>
 	</div>
-<div>Find filtered proposal data below:</div>
-	<div id="organization-type-table"></div>
+	<div class="columns small-12">
+		<div id="organization-type-table"></div>
+	</div>
 </div>
