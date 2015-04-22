@@ -1,5 +1,5 @@
 var d3 = require('d3');
-var dc = require('dc');
+var dc = require('dc-custom');
 var qd = require('quickdash-core');
 var dtip = require('d3-tip')(d3);
 

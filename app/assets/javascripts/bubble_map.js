@@ -1,4 +1,5 @@
 require('../stylesheets/18f.scss');
+require('../stylesheets/_bubble_map.scss');
 
 var $ = require('jquery');
 var jQuery = $;
