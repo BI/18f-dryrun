@@ -1,27 +1,38 @@
-Select aging:
-<select id="aging-type">
-	<option value="Recommendation to Award">Recommendation to Award</option>
-	<option value="Specialist to Award">Specialist to Award</option>
-	<option value="Submission to Award">Submission to Award</option>
-</select>
-
-<div id="loading">
-	<img src="assets/ajaxloader.gif"/>
-	<div id="daysToAwardChart">
-	<h4>Days to Award</h4>
+<div class="row">
+	<div class="page-select columns small-12">
+		<label>Select aging:</label>
+		<span>
+			<select id="aging-type">
+				<option value="Recommendation to Award">Recommendation to Award</option>
+				<option value="Specialist to Award">Specialist to Award</option>
+				<option value="Submission to Award">Submission to Award</option>
+			</select>
+		</span>
+	</div>
+</div>
+<div class="row">
+	<div id="loading" class="load-in-content" aria-hidden="true">
+		<img src="assets/ajaxloader.gif">
 	</div>
 
-	<div id="fiscalYearChart">
-	<h4>Fiscal Year</h4>
+	<div id="chartWidth" class="columns small-12 medium-6">
+		<div id="daysToAwardChart">
+			<h4>Days to Award</h4>
+		</div>
 	</div>
-
-	<div id="programAreaChart">
-	<h4>Program Area</h4>
+	<div class="columns small-12 medium-6">
+		<div id="fiscalYearChart">
+			<h4>Fiscal Year</h4>
+		</div>
 	</div>
-	
-	<div id="programChart">
-	<h4>Program</h4>
+	<div class="columns small-12 medium-6">
+		<div id="programAreaChart">
+			<h4>Program Area</h4>
+		</div>
 	</div>
-	
-
+	<div class="columns small-12 medium-6">
+		<div id="programChart">
+			<h4>Program</h4>
+		</div>
+	</div>
 </div>
