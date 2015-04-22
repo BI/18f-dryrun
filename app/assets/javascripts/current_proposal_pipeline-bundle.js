@@ -40,28 +40,29 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(4);
 
 
 /***/ },
-
-/***/ 4:
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/jackcompton/projects/18f-dryrun/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/jackcompton/projects/18f-dryrun/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
 
-	var $ = __webpack_require__(39);
+	var $ = __webpack_require__(37);
 	var jQuery = $;
-	var qd = __webpack_require__(14),
-	    inflection = __webpack_require__(32),
-	    dc = __webpack_require__(15),
-	    fastclick = __webpack_require__(33),
-	    dtip = __webpack_require__(16)(d3);
+	var qd = __webpack_require__(13),
+	    inflection = __webpack_require__(30),
+	    dc = __webpack_require__(14),
+	    fastclick = __webpack_require__(31),
+	    dtip = __webpack_require__(15)(d3);
 
 	console.log("Hello world!!!");
 
@@ -71,11 +72,18 @@
 	/* REACT HOT LOADER */ })(); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/jackcompton/projects/18f-dryrun/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "current_proposal_pipeline.js" + ": " + err.message); } }); } } })(); }
 
 /***/ },
-
-/***/ 14:
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var d3 = __webpack_require__(52);
+	var d3 = __webpack_require__(48);
 
 	var qd = {
 	 // slideOut: require('./slide-out'),
@@ -161,26 +169,25 @@
 	  });   
 	}
 
-	qd.dataConfigMixin = __webpack_require__(42);
-	qd.dataConfigurator = __webpack_require__(43);
+	qd.dataConfigMixin = __webpack_require__(40);
+	qd.dataConfigurator = __webpack_require__(41);
 
 	module.exports = qd;
 
 /***/ },
-
-/***/ 15:
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dc = __webpack_require__(51),
-	    jQuery = __webpack_require__(39);
+	var dc = __webpack_require__(49),
+	    jQuery = __webpack_require__(37);
 	var $ = jQuery;
 
 	var dcCustom = {
-	  filterTrail: __webpack_require__(44),
-	  filterBuilder: __webpack_require__(45),
-	  selectControl: __webpack_require__(46),
-	  dynatableComponent: __webpack_require__(47),
-	  audioDash: __webpack_require__(48)
+	  filterTrail: __webpack_require__(42),
+	  filterBuilder: __webpack_require__(43),
+	  selectControl: __webpack_require__(44),
+	  dynatableComponent: __webpack_require__(45),
+	  audioDash: __webpack_require__(46)
 	}
 
 	jQuery.extend(dc, dcCustom);
@@ -189,8 +196,7 @@
 
 
 /***/ },
-
-/***/ 16:
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// d3.tip
@@ -201,7 +207,7 @@
 	(function (root, factory) {
 	  if (true) {
 	    // AMD. Register as an anonymous module with d3 as a dependency.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(52)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(48)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
 	  } else if (typeof module === 'object' && module.exports) {
 	    // CommonJS
 	    module.exports = function(d3) {
@@ -585,8 +591,21 @@
 
 
 /***/ },
-
-/***/ 32:
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -1230,8 +1249,7 @@
 
 
 /***/ },
-
-/***/ 33:
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
@@ -2078,24 +2096,26 @@
 
 
 /***/ },
-
-/***/ 39:
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(40);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(38);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-
-/***/ 40:
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(41);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(39);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-
-/***/ 41:
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -11306,8 +11326,7 @@
 
 
 /***/ },
-
-/***/ 42:
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(_chart) {
@@ -11343,11 +11362,10 @@
 	}
 
 /***/ },
-
-/***/ 43:
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var lodash = __webpack_require__(78);
+	var lodash = __webpack_require__(51);
 
 	function addLookupFunctions(_cfg){
 		for (var configKey in _cfg){
@@ -11486,12 +11504,11 @@
 	} 
 
 /***/ },
-
-/***/ 44:
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dc = __webpack_require__(51),
-	    inflection = __webpack_require__(32);
+	var dc = __webpack_require__(49),
+	    inflection = __webpack_require__(30);
 
 	module.exports = function (parent, chartGroup) {
 	  
@@ -11586,12 +11603,11 @@
 
 
 /***/ },
-
-/***/ 45:
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dc = __webpack_require__(51),
-	    inflection = __webpack_require__(32);
+	var dc = __webpack_require__(49),
+	    inflection = __webpack_require__(30);
 
 	module.exports = function (parent, chartGroup) {
 	  
@@ -11867,11 +11883,10 @@
 
 
 /***/ },
-
-/***/ 46:
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dc = __webpack_require__(51);
+	var dc = __webpack_require__(49);
 
 	module.exports = function (parent, chartGroup) {
 
@@ -11941,14 +11956,13 @@
 
 
 /***/ },
-
-/***/ 47:
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $  = __webpack_require__(39);
+	var $  = __webpack_require__(37);
 	window.jQuery = $;
-	var dc = __webpack_require__(51),
-	    dynatable = __webpack_require__(81);
+	var dc = __webpack_require__(49),
+	    dynatable = __webpack_require__(53);
 
 
 	module.exports = function(parent, chartGroup){
@@ -12040,11 +12054,10 @@
 	}
 
 /***/ },
-
-/***/ 48:
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dc = __webpack_require__(51);
+	var dc = __webpack_require__(49);
 
 	//This component will take a collection of dc charts as the input, 
 	//and output a 508 compliant version of the charts using the chart data.
@@ -12216,20 +12229,8 @@
 	};
 
 /***/ },
-
-/***/ 51:
-/***/ function(module, exports, __webpack_require__) {
-
-	// Import DC and dependencies
-
-	d3 = __webpack_require__(52);
-	crossfilter = __webpack_require__(80);
-	module.exports = __webpack_require__(77);
-
-
-/***/ },
-
-/***/ 52:
+/* 47 */,
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function() {
@@ -21449,8 +21450,18 @@
 	}();
 
 /***/ },
+/* 49 */
+/***/ function(module, exports, __webpack_require__) {
 
-/***/ 77:
+	// Import DC and dependencies
+
+	d3 = __webpack_require__(48);
+	crossfilter = __webpack_require__(52);
+	module.exports = __webpack_require__(50);
+
+
+/***/ },
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! 
@@ -32286,7 +32297,7 @@
 
 	return dc;}
 	if(true) {
-	  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(52)], __WEBPACK_AMD_DEFINE_FACTORY__ = (_dc), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(48)], __WEBPACK_AMD_DEFINE_FACTORY__ = (_dc), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else if(typeof module === "object" && module.exports) {
 	  module.exports = _dc(d3);
 	} else {
@@ -32297,8 +32308,7 @@
 
 
 /***/ },
-
-/***/ 78:
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -44468,19 +44478,17 @@
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(141)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(55)(module), (function() { return this; }())))
 
 /***/ },
-
-/***/ 80:
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(140).crossfilter;
+	module.exports = __webpack_require__(54).crossfilter;
 
 
 /***/ },
-
-/***/ 81:
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -46220,8 +46228,7 @@
 
 
 /***/ },
-
-/***/ 140:
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function(exports){
@@ -47628,8 +47635,7 @@
 
 
 /***/ },
-
-/***/ 141:
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module) {
@@ -47645,5 +47651,4 @@
 
 
 /***/ }
-
-/******/ });
+/******/ ]);
